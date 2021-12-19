@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="">
+        <div class="card">
+            <div class="row d-flex justify-content-center">
+                 <div class="col-md-6 text-center">
+                      <span class="h3 text-center"> List Invoice </span> 
+                  </div>
+                
+                  <div class="col-md-6 text-right add"> 
+                         <button class="btn-dark">+</button>
+                  </div>
+            </div>
+            
+                <div class="col-12">
+                    <table class="table table-bordered">
+                    <thead class="text-center">
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Invoice</th>
+                        <th scope="col">Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Bootstrap 4 CDN and Starter Template</td>
+                            <td>
+                                <div class=" text-center">
+                                    <button type="button" class="btn btn-primary mr-3">Edit</button> 
+                                    <button type="button" class="btn btn-success mr-3">Show</button>
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                 </div>
+                                 
+                            </td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+    </div>
+    </div>
+     <br>
+
+    <button type="button" class="btn btn-primary" (click)="latestInvoice()" routerLinkActive="router-link-active">Volver</button>
+
+  </div>

@@ -1,0 +1,153 @@
+
+ <div class="bg-light" >
+    <form [formGroup]="createInvoice" (ngSubmit)="saveInvoice()">
+    <div class="row d-flex justify-content-center">
+       <div class="col-md-6 container">
+          <br><br><br><br>
+          <div class="card card-invoice">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <span class="badge badge-danger" *ngIf="submitted && createInvoice">Fields of yourCompany and Client´s Company and Invoice No, Date and Due Date, they are mandatory  </span> <br><br>
+                </div>
+            </div>
+             <div>
+                <div class="row">
+                     <div class="col-md-4">
+                       
+                        <h2 class="title-invoice"> Invoice </h2>
+                        <br> 
+                        <div><input type="text" width="100%" placeholder="Your Company*" formControlName="company" class="title-main" value=""> </div>
+                        <div><input type="text" width="100%" placeholder="Your First and Last Name*"  formControlName="firstLastName" value=""></div>
+                        <div><input type="text" width="100%" placeholder="Company Website*" formControlName="webSite"  value=""> </div>
+                        <div><input type="text" width="100%" placeholder="Company Address"  formControlName="address" value=""></div>
+                        <div><input type="text" width="100%" placeholder="City, State ZIP" formControlName="city"  value=""></div>
+                        <div><input type="text" width="100%" placeholder="Country" formControlName="city" value="country"> </div>
+                        <div><input type="text" width="100%" placeholder="Phone number"  formControlName="phoneNumber" value=""> </div>
+                        <div><input type="text" width="100%" placeholder="Email Address*" formControlName="email"  value=""></div>
+                     </div>
+                     <div class="col-md-4"></div>
+                     <div class="col-md-4 text-right">
+                        <div class="photo-invoice text-center justify-content-center">
+                            <h2 class="photo-invoice-h2">
+
+                               <br> Drag & <br>drap a logo <br> file or click to upload
+                             </h2> 
+                        </div>
+                     </div>
+                   </div>
+               </div>
+               <br>
+            <!---------------------------------------Clients company--------------------------------------------------------->
+                     
+                  <div class="row">
+                      <div class="col-md-6">
+                         <div><input type="text" width="100%" placeholder="Client's Company"  formControlName="clientCompany"   class="title-main notBorder" value=""></div>
+                         <div><input type="text" width="100%" placeholder="Client's Name"     formControlName="clientName"      class="notBorder" value=""></div>
+                         <div><input type="text" width="100%" placeholder="Client's Address"  formControlName="clientAddress"   class="notBorder" value=""></div>
+                         <div><input type="text" width="100%" placeholder="City, State ZIP"   formControlName="clientCityState" class="notBorder" value=""></div>
+                         <div><input type="text" width="100%" placeholder="Country"           formControlName="clientCountry"   class="notBorder" value=""></div>
+                      </div>
+
+                      <div class="col-md-6 text-right">
+                         <div>
+                              <input type="text" width="100%" placeholder="Invoice No." formControlName="invoiceNoLabel" class="notBorder description-invoice" value="">: <input type="text" width="100%" formControlName="invoiceNoLabel" placeholder="####" class=" notBorder  invoice-description" value="####">
+                         </div>
+                         <div>
+                             <input type="text" width="100%" placeholder="Invoice Date:" formControlName="invoiceDateLabel" class="notBorder description-invoice" value="">: <input type="text" width="100%" formControlName="invoiceDate" placeholder="12/17/2021" class=" notBorder  invoice-description" value="">
+                         </div>
+                         <div>
+                            <input type="text" width="100%" placeholder="Due Date:"      formControlName="invoiceDueDateLabel"  class="notBorder  description-invoice" value="">: <input type="text" width="100%" formControlName="invoiceDueDate" placeholder="12/17/2021" class=" notBorder  invoice-description" value="">
+                         </div>
+                     </div>
+                  </div>
+
+                <br>
+                <!------------------------------------------------------------------------------------------------>
+            
+                    <table class="table">
+                        <thead class="thead-table">
+                            <tr>
+                             <th ><input type="text" formControlName="tableId" class="input-thead-table" placeholder="ID"></th>
+                             <th ><input type="text" formControlName="tableDescription"  placeholder="Description" class="input-thead-table" value="Description"></th>
+                             <th ><input type="text" formControlName="tableQuantity"  placeholder="Quantity" class=" input-thead-table" value="Quantity"></th>
+                             <th ><input type="text" formControlName="tablePrice"  placeholder="Price" class=" input-thead-table" value="Price"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><input type="text" formControlName="id"  placeholder="01" class="notBorder input-description-table" value=""></th>
+                                <td ><input type="text" formControlName="description"  placeholder="Item" class="notBorder input-description-table" value=""></td>
+                                <td ><input type="text" formControlName="quantity"  placeholder="0" class="notBorder inputTable input-description-table" value=""></td>
+                                <td><input type="text" formControlName="price"  placeholder="0" class="notBorder inputTable input-description-table" value=""></td>
+                            </tr>
+                        </tbody>
+                   </table>
+
+                <!--------------------------------------------------------------------------------------------->
+            
+              
+                <div class="row">
+                      <div class="col-md-6">
+                             <div class="notes-invoice text-center">
+                               <span> <h6>Notes: </h6> </span><br>
+                               <textarea rows="2" formControlName="notes"  cols="25" placeholder="Any additional comments" class="textArea-invoice"></textarea>
+                            </div>
+                      </div>
+
+                      <div class="col md-6">
+                       
+                                 <div class="row">
+                                     <div class="col md-6 ">
+                                         <input type="text" width="100%"  formControlName="subtotalLabel" placeholder="Subtotal:" value="Subtotal:">
+                                     </div>
+                                     <div class="col md-6 text-right">
+                                        <span >0.00</span>
+                                    </div>
+                                 </div>
+
+                                 <div class="row">
+                                    <div class="col md-6">
+                                        <input type="text" width="100%"  formControlName="taxLabel"  placeholder="Tax:"  value="Tax:">
+                                    </div>
+                                    <div class="col md-6 text-right">
+                                       <span><input type="text" formControlName="tax"   style="width: 30px;" placeholder="0%" value=""></span>
+                                   </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col md-6">
+                                        <input type="text" width="100%"  formControlName="discountLabel" placeholder="Discount:" value="Discount">
+                                    </div>
+                                    <div class="col md-6 text-right">
+                                        <span><input type="text"  formControlName="discount"  style="width: 30px;" placeholder="0%" value=""></span>
+                                   </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col md-6">
+                                        <input type="text" width="100%" formControlName="totalLabel" placeholder="Total"  value="Total">
+                                    </div>
+                                    <div class="col md-6 text-right">
+                                       <span  class>0.00</span>
+                                   </div>
+                                </div>
+                         
+                      </div>
+                </div>
+                <div class="row" style="margin-top: 40px">
+                    <div class="col-md-12 text-center ">
+                        This invoice was created using the HubSpot Invoice Template Generator
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 40px">
+                    <div class="col-md-12 text-center">
+                        <button  class="btn-dark save-invoice">Save Invoice</button>
+                    </div>
+                </div>
+          </div>
+        </div>
+    </div>
+   </form>
+</div>
+<br>
